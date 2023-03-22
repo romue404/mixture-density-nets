@@ -9,8 +9,9 @@ simply run
 ```py
 from mixture_density_nets import MDN, MDDistribution
 # ....
-
-mu, sigma, lambda_ = net(input_data)
+mdn = MDN(in_dim, out_dim, n_components)
+# ....
+mu, sigma, lambda_ = mdn(net(input_data))
 dist = MDDistribution(mu, sigma, lambda_)
 loss = dist.nll(targets).mean()
 
