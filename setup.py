@@ -5,7 +5,7 @@ long_description = (this_directory / "README.md").read_text()
 
 
 setup(name='Mixture-Density-Nets',
-      version='0.1.0',
+      version='0.1.1',
       description='A small PyTorch library for Mixture Density Networks.',
       author='Robert Müller',
       author_email='robert.mueller1990@googlemail.com',
