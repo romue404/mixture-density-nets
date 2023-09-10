@@ -18,3 +18,4 @@ loss = dist.nll(targets).mean()
 # ...
 samples, clusters = dist.sample(n=20)  # draw 20 samples
 ```
+For a more thorough example see [example.ipynb](example.ipynb).

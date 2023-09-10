@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torch.distributions import Normal, Gumbel
+from torch.distributions import Normal
 import torch.nn.functional as F
 
 
@@ -28,7 +28,7 @@ class MDDistribution:
         normal_samples = self.normal_dist.sample((n, ))
         samples = (categorical_sample * normal_samples).sum(-2).squeeze()
         clusters = categorical_sample.squeeze().argmax(-1)
-        return samples, clusters
+        return samples.transpose(0, 1), clusters.transpose(0, 1)
 
 
 class MDN(nn.Module):
